@@ -1,3 +1,16 @@
+h5, p {
+    text-align: left;
+}
+
+.list-unstyled {
+    text-align: left;
+}
+
+.nav-item {
+    text-align: left;
+}
+
+
 footer {
     position: absolute;
     bottom: 0;
