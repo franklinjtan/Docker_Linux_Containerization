@@ -1,5 +1,29 @@
+.navbar-brand {
+    margin-left: 5%;
+}
+
+.navbar-nav {
+    text-align: center;
+    margin-left: 5%;
+}
+
 h5, p {
     text-align: left;
+}
+.section-1{
+    width: 900px;
+    margin-top: 1%;
+    margin-bottom: 3%;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+
+.carousel-item{
+    height: 600px;
+}
+.carousel-item img{
+    height: 600px;
 }
 
 .list-unstyled {
