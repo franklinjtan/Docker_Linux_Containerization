@@ -18,6 +18,13 @@ h5, p {
     margin-right: 30%;
 }
 
+.section-2{
+    width: 900px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 25%;
+    margin-right: 30%;
+}
 
 .carousel-item{
     height: 600px;
@@ -36,7 +43,7 @@ h5, p {
 
 
 footer {
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
     background: #343A40;
