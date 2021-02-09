@@ -1,121 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Docker with PyCharm Tutorial</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
-    <a class="navbar-brand" href="index.html">Website Applications Assignment</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="index.html"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
+   <head>
+      <title>Docker with PyCharm Tutorial</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link rel="stylesheet" href="styles.css">
+   </head>
+   <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="index.html">Website Applications Assignment</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="index.html"
+         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="virtualization.html">What is Virtualization</a>
+               <a class="nav-link" href="virtualization.html">What is Virtualization</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="containerization.html">What is Containerization</a>
+               <a class="nav-link" href="containerization.html">What is Containerization</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="comparison.html">Comparison</a>
+               <a class="nav-link" href="comparison.html">Comparison</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="webserver_tutorial.html">Web Server Tutorial</a>
+               <a class="nav-link" href="webserver_tutorial.html">Web Server Tutorial</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="linux_commands.html">Basic Linux Commands</a>
+               <a class="nav-link" href="linux_commands.html">Basic Linux Commands</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="docker_tutorial.html">Docker with Pycharm Tutorial</a>
+               <a class="nav-link" href="docker_tutorial.html">Docker with Pycharm Tutorial</a>
             </li>
-        </ul>
-    </div>
-</nav>
-<body>
-<div class="section-1">
-    <h2>Docker with PyCharm Tutorial</h2>
-</div>
-
-</body>
-
-<footer class="bg-primary text-white text-center text-lg-start">
-    <!-- Grid container -->
-    <div class="container p-4">
-        <!--Grid row-->
-        <div class="row">
+         </ul>
+      </div>
+   </nav>
+   <body>
+      <div class="container-custom-body justify-content">
+          <br/>
+         <!-- Docker command -->
+         <h2>Docker commands</h2>
+         <h3>Run a new container</h3>
+         <ul>
+            <li>Start a container from an image</li>
+            <span class="cmds">docker run image-name</span>
+            <li>Start a container with a name assigned</li>
+            <span class="cmds">docker run --name container_name container_image</span>
+            <li>Start a container and map a port</li>
+            <span class="cmds">docker run -p host_port:continer_port image</span>
+            <li>Start a container and map all ports
+               <span class="cmds">docker run -P image</span>
+            </li>
+            <li>Start a container in the background
+               <span class="cmds">docker run -d image</span>
+            </li>
+            <li>Start a container with an assigned hostname
+               <span class="cmds">docker run --hostname hostname_for_image image</span>
+            </li>
+            <li>Start a container with a dns entry
+               <span class="cmds">docker run --add-host hostname:ip image</span>
+            </li>
+            <li>Start a container and map a local directory into the container
+               <span class="cmds">docker run -v host-directory:target-directory image</span> <br>
+               Example: <br><span class="cmds">docker run -v ~/website:/var/www/html/ apache2</span>
+            </li>
+            <li>Start a container but change the entry point
+               <span class="cmds">docker run -it --entrypoint executable image</span>
+               <br>Example:<br>
+               <span class="cmds">docker run -it --entrypoint bash nginx</span>
+            </li>
+         </ul>
+         <h3>Manage containers</h3>
+         <ul>
+            <li>Show a list of running containers
+               <span class="cmds">docker ps</span>
+            </li>
+            <li>Show a list of all containers
+               <span class="cmds">docker ps -a</span>
+            </li>
+            <li>Delete a container
+               <span class="cmds">docker rm container</span>
+            </li>
+            <li>Delete stopped container
+               <span class="cmds">docker container prune</span>
+            </li>
+            <li>Stop a running container
+               <span class="cmds">docker stop container</span>
+            </li>
+            <li>Start a stopped container
+               <span class="cmds">docker start container</span>
+            </li>
+            <li>Copy a file from a container to the host
+               <span class="cmds">docker cp container:source target</span><br>Example: <br>
+               <span class="cmds">docker cp web:/index.html index.html</span>
+            </li>
+            <li>Copy a file from the host to a container
+               <span class="cmds">docker cp target container:source</span><br>Example: <br>
+               <span class="cmds">docker cp index.html web:/index.html</span>
+            </li>
+            <li>Start a shell inside a running container
+               <span class="cmds">docker exec -it container executable</span><br>Example: <br>
+               <span class="cmds">docker exec -it web bash</span>
+            </li>
+            <li>Rename a container
+               <span class="cmds">docker rename old-name new-name</span>
+            </li>
+            <li>Create an image out of a container
+               <span class="cmds">docker commit container</span>
+            </li>
+         </ul>
+         <h3>Manage images</h3>
+         <ul>
+            <li>Download an image
+               <span class="cmds">docker pull image</span>
+            </li>
+            <li>Upload an image to a repository
+               <span class="cmds">docker push image</span>
+            </li>
+            <li>Delete an image
+               <span class="cmds">docker rmi image</span>
+            </li>
+            <li>List all images
+               <span class="cmds">docker images</span>
+            </li>
+            <li>Delete dangling images
+               <span class="cmds">docker image prune</span>
+            </li>
+            <li>Delete all unused images
+               <span class="cmds">docker image prune -a</span>
+            </li>
+            <li>Build an image from a Dockerfile
+               <span class="cmds">docker build Directory</span>
+            </li>
+            <li>Tag an image
+               <span class="cmds">docker tag image newimage</span>
+            </li>
+            <li>Build and tag an image from a docker file
+               <span class="cmds">docker build -t image directory</span>
+            </li>
+            <li>Save an image to .tar file
+               <span class="cmds">docker save image > file.tar</span>
+            </li>
+            <li>Load an image from a .tar file
+               <span class="cmds">docker load -i file.tar</span>
+            </li>
+         </ul>
+         <h3>Info and stats</h3>
+         <ul>
+            <li>Show the logs for a container
+               <span class="cmds">docker logs container</span>
+            </li>
+            <li>Show stats of running container
+               <span class="cmds">docker stats</span>
+            </li>
+            <li>Show processes of a container
+               <span class="cmds">docker top container</span>
+            </li>
+            <li>Show installed docker version
+               <span class="cmds">docker version</span>
+            </li>
+            <li>Get detailed info about an object
+               <span class="cmds">docker inspect name</span>
+            </li>
+            <li>Show all modified files in container
+               <span class="cmds">docker diff container</span>
+            </li>
+            <li>Show mapped ports of a container
+               <span class="cmds">docker port container</span>
+            </li>
+         </ul>
+      </div>
+   </body>
+   <footer class="bg-primary text-white text-center text-lg-start">
+      <!-- Grid container -->
+      <div class="container p-4">
+         <!--Grid row-->
+         <div class="row">
             <!--Grid column-->
             <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                <h5 class="text-uppercase">About this Assignment</h5>
-
-                <p>
-                    In this assignment, we are tasked to create a website that teaches a new user about what Docker is
-                    and how it compares to virtualization. We cover other topics like containerization, linux commands,
-                    and connecting Docker with PyCharm.
-                </p>
+               <h5 class="text-uppercase">About this Assignment</h5>
+               <p>
+                  In this assignment, we are tasked to create a website that teaches a new user about what Docker is
+                  and how it compares to virtualization. We cover other topics like containerization, linux commands,
+                  and connecting Docker with PyCharm.
+               </p>
             </div>
             <!--Grid column-->
-
             <!--Grid column-->
             <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-uppercase">Topics 1</h5>
-
-                <ul class="list-unstyled mb-0">
-                    <li class="nav-item">
-                        <a class="text-white" href="virtualization.html">What is Virtualization</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="text-white" href="containerization.html">What is Containerization</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="text-white" href="comparison.html">Comparison</a>
-                    </li>
-                </ul>
+               <h5 class="text-uppercase">Topics 1</h5>
+               <ul class="list-unstyled mb-0">
+                  <li class="nav-item">
+                     <a class="text-white" href="virtualization.html">What is Virtualization</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="text-white" href="containerization.html">What is Containerization</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="text-white" href="comparison.html">Comparison</a>
+                  </li>
+               </ul>
             </div>
             <!--Grid column-->
-
             <!--Grid column-->
             <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-uppercase mb-0">Topics 2</h5>
-
-                <ul class="list-unstyled">
-                    <li class="nav-item">
-                        <a class="text-white" href="webserver_tutorial.html">Web Server Tutorial</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="text-white" href="linux_commands.html">Basic Linux Commands</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="text-white" href="docker_tutorial.html">Docker with Pycharm Tutorial</a>
-                    </li>
-                </ul>
+               <h5 class="text-uppercase mb-0">Topics 2</h5>
+               <ul class="list-unstyled">
+                  <li class="nav-item">
+                     <a class="text-white" href="webserver_tutorial.html">Web Server Tutorial</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="text-white" href="linux_commands.html">Basic Linux Commands</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="text-white" href="docker_tutorial.html">Docker with Pycharm Tutorial</a>
+                  </li>
+               </ul>
             </div>
             <!--Grid column-->
-        </div>
-        <!--Grid row-->
-    </div>
-    <!-- Grid container -->
-
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: #343A40">
-        © 2021 Franklin Tan | Lennart Lewis |
-        <a class="text-white" href="https://github.com/fjt7/Docker_Linux_Containerization">Github Repository</a>
-    </div>
-    <!-- Copyright -->
-</footer>
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+         </div>
+         <!--Grid row-->
+      </div>
+      <!-- Grid container -->
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: #343A40">
+         © 2021 Franklin Tan | Lennart Lewis |
+         <a class="text-white" href="https://github.com/fjt7/Docker_Linux_Containerization">Github Repository</a>
+      </div>
+      <!-- Copyright -->
+   </footer>
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
 </html>

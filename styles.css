@@ -93,3 +93,9 @@ h4 {
 	max-height: 300px;
 	height: auto;
 }
+
+.container-custom-body li
+{
+	list-style-type: none;
+	text-space: 20px;
+}
