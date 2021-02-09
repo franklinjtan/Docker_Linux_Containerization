@@ -40,3 +40,56 @@ footer {
     width: 100%;
     background: #343A40;
 }
+
+/* Len Styles */
+.container-custom-body {
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+h1 {
+	font-weight: normal;
+	font-size: 4em;
+}
+
+h2,
+.lead {
+	font-weight: light;
+}
+
+
+.cmds {
+	background-color: #343A40;
+	color: white;
+	padding-left: 2%;
+	padding-right: 2%;
+	border-radius: 8px;
+	text-align: center;
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+
+h4 {
+	text-align: center;
+	background-color: #0893aa;
+	color: white;
+	margin-bottom: 0px;
+	margin-top: 3%;
+}
+
+.container-cmds {
+	background-color: #1d6676;
+	padding: 2%;
+	margin-top: 0px;
+	color: white;
+}
+
+.container-cmds p {
+	margin-bottom: 1%;
+	margin-top: 1%;
+}
+
+.img-fluid {
+	max-height: 300px;
+	height: auto;
+}
